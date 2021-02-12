@@ -1,5 +1,5 @@
 {
-  "name": "docusign-backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Venkatesh G",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
