@@ -36,6 +36,22 @@ router.put('/update_user/:user_id', auth, (req, res) => {
         res.status(httpError.code).send(httpError.details)
     })
 })
+router.put('/forgot_password/:email',(req,res)=>{
+    userController.forgotPassword(req.params.email, req.headers.origin).then((result)=>{
+        res.send(result)
+    }).catch((err) => {
+        let httpError = apiError.getError(err)
+        res.status(httpError.code).send(httpError.details)
+    })
+})
+router.put('/reset_password',(req,res)=>{
+    userController.resetPassword(req.body).then((result)=>{
+        res.send(result)
+    }).catch((err) => {
+        let httpError = apiError.getError(err)
+        res.status(httpError.code).send(httpError.details)
+    })
+})
 router.delete('/delete_user/:user_id', auth, (req, res) => {
     userController.deleteUserById(req.params.user_id).then((result) => {
         res.send(result)

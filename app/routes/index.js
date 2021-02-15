@@ -1,7 +1,7 @@
 const userRoutes = require('./user_routes');
 
 module.exports = (app) => {
-	app.use(process.env.APIVERSION,
+	app.use(`${process.env.APIVERSION}/user`,
 		userRoutes,
 	)
 };
